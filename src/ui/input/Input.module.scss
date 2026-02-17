@@ -1,0 +1,320 @@
+// Цветовые переменные
+$primary-color: #1670dc;
+$secondary-color: #6c757d;
+$secondary-hover: #5a6268;
+$secondary-active: #495057;
+$success-color: #28a745;
+$error-color: #dc3545;
+$warning-color: #ffc107;
+
+// Дополнительные цвета для состояний
+$border-color: #ddd;
+$border-disabled: #e0e0e0;
+$bg-disabled: #f5f5f5;
+$bg-disabled-darker: #e8e8e8;
+$text-disabled: #999;
+$icon-color: #939393;
+$label-color: #666;
+
+.nui-wrapper {
+  border: 2px solid $border-color;
+  border-radius: 10px;
+  max-width: max-content;
+  position: relative;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background: white;
+  width: 100%;
+  transition: all 0.3s ease;
+
+  // Disabled стили для wrapper
+  &:has(.nui-inpt:disabled) {
+    background-color: $bg-disabled;
+    border-color: $border-disabled;
+    cursor: not-allowed;
+
+    .nui-label {
+      color: $text-disabled;
+    }
+
+    .nui-clearIcon {
+      border-left-color: $border-disabled;
+      cursor: not-allowed;
+
+      .icon {
+        color: $border-disabled;
+
+        &:hover {
+          color: $border-disabled;
+        }
+      }
+    }
+  }
+
+  //size
+  &--small {
+    min-width: 220px;
+    height: 36px;
+  }
+
+  &--medium {
+    min-width: 280px;
+    height: 44px;
+  }
+
+  &--large {
+    min-width: 380px;
+    height: 52px;
+  }
+
+  //variant
+  &--outlined {
+    border-radius: 10px;
+    background: transparent;
+
+    &:focus-within {
+      border: 2px solid $primary-color;
+      border-color: $primary-color;
+    }
+
+    // Disabled для outlined
+    &:has(.nui-inpt:disabled) {
+      background: $bg-disabled-darker;
+    }
+
+    &:has(.nui-inpt:disabled) .nui-label {
+      background: $bg-disabled-darker;
+    }
+  }
+
+  &--filled {
+    border: none;
+    background: $bg-disabled;
+
+    &:focus-within {
+      border-radius: 10px;
+      background: $bg-disabled;
+    }
+
+    // Disabled для filled
+    &:has(.nui-inpt:disabled) {
+      background: $bg-disabled-darker;
+    }
+  }
+
+  &--underline {
+    border: none;
+    border-bottom: 2px solid $border-color;
+    border-radius: 0;
+    background: transparent;
+
+    &:focus-within {
+      border-bottom-color: $primary-color;
+    }
+
+    // Disabled для underline
+    &:has(.nui-inpt:disabled) {
+      border-bottom-color: $border-disabled;
+      background: $bg-disabled-darker;
+    }
+  }
+
+  &--warning,
+  &--warning:focus-within {
+    border-color: $warning-color;
+  }
+
+  &--error,
+  &--error:focus-within {
+    border-color: $error-color;
+  }
+
+  &--success,
+  &--success:focus-within {
+    border-color: $success-color;
+  }
+}
+
+.nui-inpt {
+  border: none;
+  background: none;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+  // Disabled стили для input
+  &:disabled {
+    cursor: not-allowed;
+    color: $text-disabled;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $text-disabled;
+    }
+  }
+
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active {
+    border-radius: 10px;
+    background-color: inherit !important;
+  }
+
+  // Для Firefox
+  &:-moz-autofill {
+    border-radius: 10px;
+    background-color: inherit !important;
+  }
+
+  //size
+  &--small {
+    font-size: 0.8rem;
+    padding: 4px 6px;
+  }
+  &--medium {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+  &--large {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
+}
+
+.nui-label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  pointer-events: none;
+  padding: 0 4px;
+  transition: all 0.2s ease;
+  color: $label-color;
+
+  //size
+  &--small {
+    font-size: 0.7rem;
+  }
+  &--medium {
+    font-size: 0.8rem;
+  }
+  &--large {
+    font-size: 0.9rem;
+  }
+
+  &--warning {
+    color: $warning-color;
+  }
+
+  &--error {
+    color: $error-color;
+  }
+
+  &--success {
+    color: $success-color;
+  }
+
+  &--filled {
+    background-color: transparent;
+  }
+  &--underline {
+    background-color: transparent;
+  }
+}
+
+.icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: $icon-color;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.nui-clearIcon {
+  display: flex;
+  padding: 0 8px;
+  border-left: 1px solid $border-color;
+  box-sizing: border-box;
+  align-items: center;
+  cursor: pointer;
+
+  &--small {
+    height: 33px;
+    border-radius: 0 10px 10px 0;
+  }
+  &--medium {
+    height: 41px;
+    border-radius: 0 10px 10px 0;
+  }
+  &--large {
+    height: 49px;
+    border-radius: 0 10px 10px 0;
+  }
+}
+
+.nui-inpt:focus ~ .nui-label,
+.nui-inpt:hover ~ .nui-label,
+.nui-inpt:not(:placeholder-shown) ~ .nui-label {
+  top: -10px;
+  transform: translateY(0);
+  font-size: 12px;
+
+  &--small {
+    font-size: 0.6rem;
+  }
+  &--medium {
+    font-size: 0.7rem;
+  }
+  &--large {
+    font-size: 0.8rem;
+  }
+}
+
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid $primary-color;
+  border-radius: 50%;
+  animation: nui-spin 1s linear infinite;
+
+  @keyframes nui-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// Отключаем hover эффекты для disabled состояния
+.nui-wrapper:has(.nui-inpt:disabled) {
+  .nui-inpt:hover ~ .nui-label {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: inherit;
+    color: $text-disabled;
+
+    &--small {
+      font-size: 0.7rem;
+    }
+    &--medium {
+      font-size: 0.8rem;
+    }
+    &--large {
+      font-size: 0.9rem;
+    }
+  }
+}
