@@ -1,0 +1,22 @@
+# Зависимости
+node_modules
+.next
+out
+build
+dist
+coverage
+
+# Конфиги
+next-env.d.ts
+*.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Логи
+*.log
+.husky
+
+public
+*.config.ts
+*.config.mjs
