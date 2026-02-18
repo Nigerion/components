@@ -46,7 +46,7 @@ export const Input = ({
   disabled = false,
   onChange,
   className,
-  style,
+  // style,
   loading,
   status,
   value,

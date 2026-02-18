@@ -18,16 +18,16 @@ import { Tab } from "../ui/tabs/ui/Tab";
 
 // Определяем типы
 type Column = {
-	key: string;
-	value: string;
-	width?: number;
-	minWidth?: number;
-	fixed?: "left" | "right";
+  key: string;
+  value: string;
+  width?: number;
+  minWidth?: number;
+  fixed?: "left" | "right";
 };
 
 type RowData = {
-	[key: string]: any;
-	id: string | number;
+  [key: string]: any;
+  id: string | number;
 };
 
 // // Генерация колонок на основе данных
@@ -54,81 +54,81 @@ type RowData = {
 // };
 
 export default function Home() {
-	const [inputValue, setInputValue] = useState("");
-	// Определяем колонки на основе данных
-	// const columns = generateColumns();
+  const [inputValue, setInputValue] = useState("");
+  // Определяем колонки на основе данных
+  // const columns = generateColumns();
 
-	// // Преобразуем данные событий для таблицы
-	// const tableData = transformEventsToTableData();
-	// // Состояние для пагинации
-	// const [currentPage, setCurrentPage] = useState(1);
-	// const [itemsPerPage, setItemsPerPage] = useState(30);
-	// // Обработчик изменения страницы
-	// const handlePageChange = (page: number) => {
-	//     setCurrentPage(page);
-	// };
+  // // Преобразуем данные событий для таблицы
+  // const tableData = transformEventsToTableData();
+  // // Состояние для пагинации
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const [itemsPerPage, setItemsPerPage] = useState(30);
+  // // Обработчик изменения страницы
+  // const handlePageChange = (page: number) => {
+  //     setCurrentPage(page);
+  // };
 
-	// // Обработчик изменения количества элементов на странице
-	// const handleItemsPerPageChange = (value: number) => {
-	//     setItemsPerPage(value);
-	//     setCurrentPage(1); // Сбрасываем на первую страницу при изменении размера
-	// };
+  // // Обработчик изменения количества элементов на странице
+  // const handleItemsPerPageChange = (value: number) => {
+  //     setItemsPerPage(value);
+  //     setCurrentPage(1); // Сбрасываем на первую страницу при изменении размера
+  // };
 
-	// const options = [
-	//   { key: "option1", label: "Первый вариант" },
-	//   { key: "option2", label: "Второй вариант" },
-	//   { key: "option3", label: "Третий вариант" },
-	//   { key: "option4", label: "Четвертый вариант" },
-	// ];
+  // const options = [
+  //   { key: "option1", label: "Первый вариант" },
+  //   { key: "option2", label: "Второй вариант" },
+  //   { key: "option3", label: "Третий вариант" },
+  //   { key: "option4", label: "Четвертый вариант" },
+  // ];
 
-	// const handleChange = (value: string | string[]) => {
-	//   console.log("Выбранный вариант:", value);
-	// };
+  // const handleChange = (value: string | string[]) => {
+  //   console.log("Выбранный вариант:", value);
+  // };
 
-	// // const [selectedValue, setSelectedValue] = useState<string>("");
+  // // const [selectedValue, setSelectedValue] = useState<string>("");
 
-	// const cityOptions = [
-	//   { key: "moscow", label: "Москва" },
-	//   { key: "spb", label: "Санкт-Петербург" },
-	//   { key: "kazan", label: "Казань" },
-	//   { key: "ekb", label: "Екатеринбург" },
-	//   { key: "novosibirsk", label: "Новосибирск" },
-	// ];
+  // const cityOptions = [
+  //   { key: "moscow", label: "Москва" },
+  //   { key: "spb", label: "Санкт-Петербург" },
+  //   { key: "kazan", label: "Казань" },
+  //   { key: "ekb", label: "Екатеринбург" },
+  //   { key: "novosibirsk", label: "Новосибирск" },
+  // ];
 
-	// const handleCityChange = (cityKey: string | string[]) => {
-	//   // setSelectedValue(cityKey);
-	//   // Здесь можно выполнить дополнительную логику,
-	//   // например, загрузить данные для выбранного города
-	// };
+  // const handleCityChange = (cityKey: string | string[]) => {
+  //   // setSelectedValue(cityKey);
+  //   // Здесь можно выполнить дополнительную логику,
+  //   // например, загрузить данные для выбранного города
+  // };
 
-	// const statusOptions = [
-	//   { key: "active", label: "Активный" },
-	//   { key: "pending", label: "В ожидании", disabled: true },
-	//   { key: "inactive", label: "Неактивный" },
-	//   { key: "archived", label: "В архиве" },
-	//   { key: "deleted", label: "Удален", disabled: true },
-	// ];
+  // const statusOptions = [
+  //   { key: "active", label: "Активный" },
+  //   { key: "pending", label: "В ожидании", disabled: true },
+  //   { key: "inactive", label: "Неактивный" },
+  //   { key: "archived", label: "В архиве" },
+  //   { key: "deleted", label: "Удален", disabled: true },
+  // ];
 
-	// const countryOptions = [
-	//   { key: "ru", label: "Россия" },
-	//   { key: "us", label: "США" },
-	//   { key: "de", label: "Германия" },
-	//   { key: "fr", label: "Франция" },
-	//   { key: "jp", label: "Япония" },
-	// ];
+  // const countryOptions = [
+  //   { key: "ru", label: "Россия" },
+  //   { key: "us", label: "США" },
+  //   { key: "de", label: "Германия" },
+  //   { key: "fr", label: "Франция" },
+  //   { key: "jp", label: "Япония" },
+  // ];
 
-	return (
-		<div
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "center",
-				alignItems: "ceter",
-				margin: " 30%",
-			}}
-		>
-			<h1>Здесь будут появляться компоненты!</h1>
-			{/* <div>
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "ceter",
+        margin: " 30%",
+      }}
+    >
+      <h1>Здесь будут появляться компоненты!</h1>
+      {/* <div>
         <Select
           multiple
           options={options}
@@ -224,160 +224,353 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', padding: '20px' }}>
-  {/* Поле ввода Разные размеры */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Разные размеры</h3>
-    <Input size="small" placeholder="Маленький" />
-    <Input size="medium" placeholder="Средний" />
-    <Input size="large" placeholder="Большой" />
-  </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "20px",
+          padding: "20px",
+        }}
+      >
+        {/* Поле ввода Разные размеры */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Разные размеры</h3>
+          <Input size="small" placeholder="Маленький" />
+          <Input size="medium" placeholder="Средний" />
+          <Input size="large" placeholder="Большой" />
+        </div>
 
-  {/* Разные варианты */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Базовые варианты</h3>
-    <Input variant="outlined" placeholder="Outlined" />
-    <Input variant="filled" placeholder="Filled" />
-    <Input variant="underline" placeholder="Underline" />
-  </div>
+        {/* Разные варианты */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Базовые варианты</h3>
+          <Input variant="outlined" placeholder="Outlined" />
+          <Input variant="filled" placeholder="Filled" />
+          <Input variant="underline" placeholder="Underline" />
+        </div>
 
-  {/* Medium размер с разными вариантами */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Medium размер</h3>
-    <Input variant="outlined" size="medium" placeholder="Outlined Medium" />
-    <Input variant="filled" size="medium" placeholder="Filled Medium" />
-    <Input variant="underline" size="medium" placeholder="Underline Medium" />
-  </div>
+        {/* Medium размер с разными вариантами */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Medium размер</h3>
+          <Input
+            variant="outlined"
+            size="medium"
+            placeholder="Outlined Medium"
+          />
+          <Input variant="filled" size="medium" placeholder="Filled Medium" />
+          <Input
+            variant="underline"
+            size="medium"
+            placeholder="Underline Medium"
+          />
+        </div>
 
-  {/* Large размер с разными вариантами */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Large размер</h3>
-    <Input variant="outlined" size="large" placeholder="Outlined Large" />
-    <Input variant="filled" size="large" placeholder="Filled Large" />
-    <Input variant="underline" size="large" placeholder="Underline Large" />
-  </div>
+        {/* Large размер с разными вариантами */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Large размер</h3>
+          <Input variant="outlined" size="large" placeholder="Outlined Large" />
+          <Input variant="filled" size="large" placeholder="Filled Large" />
+          <Input
+            variant="underline"
+            size="large"
+            placeholder="Underline Large"
+          />
+        </div>
 
-  {/* Разные статусы - базовые */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Базовые статусы</h3>
-    <Input status="error" placeholder="Ошибка" />
-    <Input status="warning" placeholder="Предупреждение" />
-    <Input status="success" placeholder="Успех" />
-  </div>
+        {/* Разные статусы - базовые */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Базовые статусы</h3>
+          <Input status="error" placeholder="Ошибка" />
+          <Input status="warning" placeholder="Предупреждение" />
+          <Input status="success" placeholder="Успех" />
+        </div>
 
-  {/* Статусы с разными вариантами */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Статусы с вариантами</h3>
-    <Input status="error" variant="outlined" placeholder="Ошибка Outlined" />
-    <Input status="warning" variant="outlined" placeholder="Предупреждение Outlined" />
-    <Input status="success" variant="outlined" placeholder="Успех Outlined" />
-    
-    <Input status="error" variant="filled" placeholder="Ошибка Filled" />
-    <Input status="warning" variant="filled" placeholder="Предупреждение Filled" />
-    <Input status="success" variant="filled" placeholder="Успех Filled" />
-    
-    <Input status="error" variant="underline" placeholder="Ошибка Underline" />
-    <Input status="warning" variant="underline" placeholder="Предупреждение Underline" />
-    <Input status="success" variant="underline" placeholder="Успех Underline" />
-  </div>
+        {/* Статусы с разными вариантами */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Статусы с вариантами</h3>
+          <Input
+            status="error"
+            variant="outlined"
+            placeholder="Ошибка Outlined"
+          />
+          <Input
+            status="warning"
+            variant="outlined"
+            placeholder="Предупреждение Outlined"
+          />
+          <Input
+            status="success"
+            variant="outlined"
+            placeholder="Успех Outlined"
+          />
 
-  {/* Статусы с разными размерами */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Статусы с размерами</h3>
-    <Input status="error" size="small" placeholder="Ошибка Small" />
-    <Input status="warning" size="small" placeholder="Предупреждение Small" />
-    <Input status="success" size="small" placeholder="Успех Small" />
-    
-    <Input status="error" size="medium" placeholder="Ошибка Medium" />
-    <Input status="warning" size="medium" placeholder="Предупреждение Medium" />
-    <Input status="success" size="medium" placeholder="Успех Medium" />
-    
-    <Input status="error" size="large" placeholder="Ошибка Large" />
-    <Input status="warning" size="large" placeholder="Предупреждение Large" />
-    <Input status="success" size="large" placeholder="Успех Large" />
-  </div>
+          <Input status="error" variant="filled" placeholder="Ошибка Filled" />
+          <Input
+            status="warning"
+            variant="filled"
+            placeholder="Предупреждение Filled"
+          />
+          <Input status="success" variant="filled" placeholder="Успех Filled" />
 
-  {/* Статусы с иконкой очистки */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Статусы с очисткой</h3>
-    <Input clearable status="error" placeholder="Ошибка с очисткой" />
-    <Input clearable status="warning" placeholder="Предупреждение с очисткой" />
-    <Input clearable status="success" placeholder="Успех с очисткой" />
-  </div>
+          <Input
+            status="error"
+            variant="underline"
+            placeholder="Ошибка Underline"
+          />
+          <Input
+            status="warning"
+            variant="underline"
+            placeholder="Предупреждение Underline"
+          />
+          <Input
+            status="success"
+            variant="underline"
+            placeholder="Успех Underline"
+          />
+        </div>
 
-  {/* Статусы с иконкой очистки и разными вариантами */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Статусы с очисткой и вариантами</h3>
-    <Input clearable status="error" variant="outlined" placeholder="Ошибка Outlined" />
-    <Input clearable status="warning" variant="outlined" placeholder="Предупреждение Outlined" />
-    <Input clearable status="success" variant="outlined" placeholder="Успех Outlined" />
-    
-    <Input clearable status="error" variant="filled" placeholder="Ошибка Filled" />
-    <Input clearable status="warning" variant="filled" placeholder="Предупреждение Filled" />
-    <Input clearable status="success" variant="filled" placeholder="Успех Filled" />
-    
-    <Input clearable status="error" variant="underline" placeholder="Ошибка Underline" />
-    <Input clearable status="warning" variant="underline" placeholder="Предупреждение Underline" />
-    <Input clearable status="success" variant="underline" placeholder="Успех Underline" />
-  </div>
+        {/* Статусы с разными размерами */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Статусы с размерами</h3>
+          <Input status="error" size="small" placeholder="Ошибка Small" />
+          <Input
+            status="warning"
+            size="small"
+            placeholder="Предупреждение Small"
+          />
+          <Input status="success" size="small" placeholder="Успех Small" />
 
-  {/* Статусы с иконкой очистки и разными размерами */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Статусы с очисткой и размерами</h3>
-    <Input clearable status="error" size="small" placeholder="Ошибка Small" />
-    <Input clearable status="warning" size="small" placeholder="Предупреждение Small" />
-    <Input clearable status="success" size="small" placeholder="Успех Small" />
-    
-    <Input clearable status="error" size="medium" placeholder="Ошибка Medium" />
-    <Input clearable status="warning" size="medium" placeholder="Предупреждение Medium" />
-    <Input clearable status="success" size="medium" placeholder="Успех Medium" />
-    
-    <Input clearable status="error" size="large" placeholder="Ошибка Large" />
-    <Input clearable status="warning" size="large" placeholder="Предупреждение Large" />
-    <Input clearable status="success" size="large" placeholder="Успех Large" />
-  </div>
+          <Input status="error" size="medium" placeholder="Ошибка Medium" />
+          <Input
+            status="warning"
+            size="medium"
+            placeholder="Предупреждение Medium"
+          />
+          <Input status="success" size="medium" placeholder="Успех Medium" />
 
-  {/* С иконкой очистки - базовые */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>С очисткой - базовые</h3>
-    <Input clearable placeholder="Очищаемый" />
-    <Input clearable variant="filled" placeholder="Очищаемый Filled" />
-    <Input clearable variant="underline" placeholder="Очищаемый Underline" />
-  </div>
+          <Input status="error" size="large" placeholder="Ошибка Large" />
+          <Input
+            status="warning"
+            size="large"
+            placeholder="Предупреждение Large"
+          />
+          <Input status="success" size="large" placeholder="Успех Large" />
+        </div>
 
-  {/* С иконкой очистки - medium размер */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>С очисткой - Medium</h3>
-    <Input clearable size="medium" placeholder="Очищаемый Medium" />
-    <Input clearable size="medium" variant="filled" placeholder="Очищаемый Filled Medium" />
-    <Input clearable size="medium" variant="underline" placeholder="Очищаемый Underline Medium" />
-  </div>
+        {/* Статусы с иконкой очистки */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Статусы с очисткой</h3>
+          <Input clearable status="error" placeholder="Ошибка с очисткой" />
+          <Input
+            clearable
+            status="warning"
+            placeholder="Предупреждение с очисткой"
+          />
+          <Input clearable status="success" placeholder="Успех с очисткой" />
+        </div>
 
-  {/* С иконкой очистки - large размер */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>С очисткой - Large</h3>
-    <Input clearable size="large" placeholder="Очищаемый Large" />
-    <Input clearable size="large" variant="filled" placeholder="Очищаемый Filled Large" />
-    <Input clearable size="large" variant="underline" placeholder="Очищаемый Underline Large" />
-  </div>
+        {/* Статусы с иконкой очистки и разными вариантами */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Статусы с очисткой и вариантами</h3>
+          <Input
+            clearable
+            status="error"
+            variant="outlined"
+            placeholder="Ошибка Outlined"
+          />
+          <Input
+            clearable
+            status="warning"
+            variant="outlined"
+            placeholder="Предупреждение Outlined"
+          />
+          <Input
+            clearable
+            status="success"
+            variant="outlined"
+            placeholder="Успех Outlined"
+          />
 
-  {/* Заблокированные */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Заблокированные</h3>
-    <Input variant="filled" disabled placeholder="Заблокировано Filled" />
-    <Input variant="outlined" disabled placeholder="Заблокировано Outlined" />
-    <Input variant="underline" disabled placeholder="Заблокировано Underline" />
-  </div>
+          <Input
+            clearable
+            status="error"
+            variant="filled"
+            placeholder="Ошибка Filled"
+          />
+          <Input
+            clearable
+            status="warning"
+            variant="filled"
+            placeholder="Предупреждение Filled"
+          />
+          <Input
+            clearable
+            status="success"
+            variant="filled"
+            placeholder="Успех Filled"
+          />
 
-  {/* Заблокированные со статусами */}
-  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-    <h3>Заблокированные со статусами</h3>
-    <Input disabled status="error" placeholder="Ошибка (заблокировано)" />
-    <Input disabled status="warning" placeholder="Предупреждение (заблокировано)" />
-    <Input disabled status="success" placeholder="Успех (заблокировано)" />
-  </div>
-</div>
-			{/* <div
+          <Input
+            clearable
+            status="error"
+            variant="underline"
+            placeholder="Ошибка Underline"
+          />
+          <Input
+            clearable
+            status="warning"
+            variant="underline"
+            placeholder="Предупреждение Underline"
+          />
+          <Input
+            clearable
+            status="success"
+            variant="underline"
+            placeholder="Успех Underline"
+          />
+        </div>
+
+        {/* Статусы с иконкой очистки и разными размерами */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Статусы с очисткой и размерами</h3>
+          <Input
+            clearable
+            status="error"
+            size="small"
+            placeholder="Ошибка Small"
+          />
+          <Input
+            clearable
+            status="warning"
+            size="small"
+            placeholder="Предупреждение Small"
+          />
+          <Input
+            clearable
+            status="success"
+            size="small"
+            placeholder="Успех Small"
+          />
+
+          <Input
+            clearable
+            status="error"
+            size="medium"
+            placeholder="Ошибка Medium"
+          />
+          <Input
+            clearable
+            status="warning"
+            size="medium"
+            placeholder="Предупреждение Medium"
+          />
+          <Input
+            clearable
+            status="success"
+            size="medium"
+            placeholder="Успех Medium"
+          />
+
+          <Input
+            clearable
+            status="error"
+            size="large"
+            placeholder="Ошибка Large"
+          />
+          <Input
+            clearable
+            status="warning"
+            size="large"
+            placeholder="Предупреждение Large"
+          />
+          <Input
+            clearable
+            status="success"
+            size="large"
+            placeholder="Успех Large"
+          />
+        </div>
+
+        {/* С иконкой очистки - базовые */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>С очисткой - базовые</h3>
+          <Input clearable placeholder="Очищаемый" />
+          <Input clearable variant="filled" placeholder="Очищаемый Filled" />
+          <Input
+            clearable
+            variant="underline"
+            placeholder="Очищаемый Underline"
+          />
+        </div>
+
+        {/* С иконкой очистки - medium размер */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>С очисткой - Medium</h3>
+          <Input clearable size="medium" placeholder="Очищаемый Medium" />
+          <Input
+            clearable
+            size="medium"
+            variant="filled"
+            placeholder="Очищаемый Filled Medium"
+          />
+          <Input
+            clearable
+            size="medium"
+            variant="underline"
+            placeholder="Очищаемый Underline Medium"
+          />
+        </div>
+
+        {/* С иконкой очистки - large размер */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>С очисткой - Large</h3>
+          <Input clearable size="large" placeholder="Очищаемый Large" />
+          <Input
+            clearable
+            size="large"
+            variant="filled"
+            placeholder="Очищаемый Filled Large"
+          />
+          <Input
+            clearable
+            size="large"
+            variant="underline"
+            placeholder="Очищаемый Underline Large"
+          />
+        </div>
+
+        {/* Заблокированные */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Заблокированные</h3>
+          <Input variant="filled" disabled placeholder="Заблокировано Filled" />
+          <Input
+            variant="outlined"
+            disabled
+            placeholder="Заблокировано Outlined"
+          />
+          <Input
+            variant="underline"
+            disabled
+            placeholder="Заблокировано Underline"
+          />
+        </div>
+
+        {/* Заблокированные со статусами */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <h3>Заблокированные со статусами</h3>
+          <Input disabled status="error" placeholder="Ошибка (заблокировано)" />
+          <Input
+            disabled
+            status="warning"
+            placeholder="Предупреждение (заблокировано)"
+          />
+          <Input
+            disabled
+            status="success"
+            placeholder="Успех (заблокировано)"
+          />
+        </div>
+      </div>
+      {/* <div
 				style={{
 					display: "flex",
 					flexDirection: "column",
@@ -448,7 +641,7 @@ export default function Home() {
 					color="primary"
 				/>
 			</div> */}
-			{/* <div>
+      {/* <div>
 				Поле ввода Разные размеры
 				<Input size="small" placeholder="Маленький" />
 				<Input size="medium" placeholder="Средний" />
@@ -546,12 +739,12 @@ export default function Home() {
 					placeholder="Заблокировано"
 				/>
 			</div> */}
-			{/* <div>
+      {/* <div>
 				Breadcrumbs
 				<Breadcrumbs></Breadcrumbs>
 			</div> */}
-			{/* Карточки */}
-			{/* <div style={{ display: "flex" }}>
+      {/* Карточки */}
+      {/* <div style={{ display: "flex" }}>
 				<Card>
 					<CardHeader
 						title="Title"
@@ -649,6 +842,6 @@ export default function Home() {
 					/>
 				</div>
 			</div> */}
-		</div>
-	);
+    </div>
+  );
 }
