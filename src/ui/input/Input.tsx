@@ -83,10 +83,24 @@ export const Input = ({
     .join(" ")
     .trim();
 
-  const iconClasses = [styles[`${prefixCls}-clearIcon`], styles[`${prefixCls}-clearIcon--${size}`]]
+  const iconClasses = [
+    styles[`${prefixCls}-clearIcon`],
+    styles[`${prefixCls}-clearIcon--${size}`],
+    status && styles[`${prefixCls}-clearIcon--${status}`],
+  ]
     .filter(Boolean)
     .join(" ")
     .trim();
+
+  const iconClass = [
+    styles[`${prefixCls}-icon`],
+    size && styles[`${prefixCls}-icon--${size}`], // Добавил размер для иконки
+    status && styles[`${prefixCls}-icon--${status}`],
+  ]
+    .filter(Boolean)
+    .join(" ")
+    .trim();
+
   const lableClasses = [
     styles[`${prefixCls}-label`],
     styles[`${prefixCls}-label--${size}`],
@@ -130,7 +144,7 @@ export const Input = ({
       />
       {clearable && type === "text" && !loading && (
         <span onClick={handleClickIcon} className={iconClasses}>
-          <CircleX className={styles.icon} />
+          <CircleX className={iconClass} />
         </span>
       )}
       {loading && (
