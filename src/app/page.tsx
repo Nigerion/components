@@ -1,34 +1,40 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { useEffect, useState } from "react";
+import {
+  //  useEffect,
+  useState,
+} from "react";
 
-import { Download, Heart, Search, User } from "lucide-react";
+import { Tabs } from "@/ui/tabs/Tabs";
 
-import { Breadcrumbs } from "../ui/breadcrumbs/Breadcrumbs";
-import { Button } from "../ui/button/Button";
+// import { Download, Heart, Search, User } from "lucide-react";
+
+// import { Breadcrumbs } from "../ui/breadcrumbs/Breadcrumbs";
+// import { Button } from "../ui/button/Button";
 import { Card } from "../ui/card/Card";
 import { CardContent } from "../ui/card/ui/CardContent/CardContent";
 import { CardFooter } from "../ui/card/ui/CardFooter/CardFooter";
 import { CardHeader } from "../ui/card/ui/CardHeader/CardHeader";
 import { Input } from "../ui/input/Input";
-import { Select } from "../ui/select.ts/Select";
-import Table from "../ui/table/Table";
-import { Tabs } from "../ui/tabs/Tabs";
-import { Tab } from "../ui/tabs/ui/Tab";
+
+// import { Select } from "../ui/select.ts/Select";
+// import Table from "../ui/table/Table";
+// import { Tabs } from "../ui/tabs/Tabs";
+
+// import { Tab } from "../ui/tabs/ui/Tab";
 
 // Определяем типы
-type Column = {
-  key: string;
-  value: string;
-  width?: number;
-  minWidth?: number;
-  fixed?: "left" | "right";
-};
+// type Column = {
+//   key: string;
+//   value: string;
+//   width?: number;
+//   minWidth?: number;
+//   fixed?: "left" | "right";
+// };
 
-type RowData = {
-  [key: string]: any;
-  id: string | number;
-};
+// type RowData = {
+//   [key: string]: any;
+//   id: string | number;
+// };
 
 // // Генерация колонок на основе данных
 // const generateColumns = (): Column[] => {
@@ -52,9 +58,25 @@ type RowData = {
 //         return row;
 //     });
 // };
-
+const tabs = [
+  {
+    value: "profile",
+    label: "Профиль",
+    content: <div>Информация профиля</div>,
+  },
+  {
+    value: "settings",
+    label: "Настройки",
+    content: <div>Настройки приложения</div>,
+  },
+  {
+    value: "notifications",
+    label: "Уведомления",
+    content: <div>Нет уведомлений</div>,
+  },
+];
 export default function Home() {
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
   // Определяем колонки на основе данных
   // const columns = generateColumns();
 
@@ -128,6 +150,17 @@ export default function Home() {
       }}
     >
       <h1>Здесь будут появляться компоненты!</h1>
+      <Card>
+        <CardHeader title="Title" subheader="subheader"></CardHeader>
+        <CardContent>Здесь контен</CardContent>
+        <CardFooter>Здесь футер</CardFooter>
+      </Card>
+      <Card>
+        <CardHeader title="Бобо" subheader="Длдд"></CardHeader>
+        <CardContent>Здесь контен</CardContent>
+        <CardFooter>Здесь футер</CardFooter>
+      </Card>
+      {/* <Tabs tabs={tabs} fullWidth={true} /> */}
       {/* <div>
         <Select
           multiple
@@ -224,7 +257,7 @@ export default function Home() {
           </div>
         </div>
       </div> */}
-      <div
+      {/* <div
         style={{
           display: "flex",
           flexDirection: "column",
@@ -232,7 +265,7 @@ export default function Home() {
           padding: "20px",
         }}
       >
-        {/* Поле ввода Разные размеры */}
+      
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Разные размеры</h3>
           <Input size="small" placeholder="Маленький" />
@@ -240,7 +273,7 @@ export default function Home() {
           <Input size="large" placeholder="Большой" />
         </div>
 
-        {/* Разные варианты */}
+        
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Базовые варианты</h3>
           <Input variant="outlined" placeholder="Outlined" />
@@ -248,7 +281,7 @@ export default function Home() {
           <Input variant="underline" placeholder="Underline" />
         </div>
 
-        {/* Medium размер с разными вариантами */}
+    
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Medium размер</h3>
           <Input
@@ -264,7 +297,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Large размер с разными вариантами */}
+        
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Large размер</h3>
           <Input variant="outlined" size="large" placeholder="Outlined Large" />
@@ -276,7 +309,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Разные статусы - базовые */}
+      
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Базовые статусы</h3>
           <Input status="error" placeholder="Ошибка" />
@@ -284,7 +317,7 @@ export default function Home() {
           <Input status="success" placeholder="Успех" />
         </div>
 
-        {/* Статусы с разными вариантами */}
+        
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Статусы с вариантами</h3>
           <Input
@@ -328,7 +361,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Статусы с разными размерами */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Статусы с размерами</h3>
           <Input status="error" size="small" placeholder="Ошибка Small" />
@@ -355,8 +387,6 @@ export default function Home() {
           />
           <Input status="success" size="large" placeholder="Успех Large" />
         </div>
-
-        {/* Статусы с иконкой очистки */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Статусы с очисткой</h3>
           <Input clearable status="error" placeholder="Ошибка с очисткой" />
@@ -368,7 +398,6 @@ export default function Home() {
           <Input clearable status="success" placeholder="Успех с очисткой" />
         </div>
 
-        {/* Статусы с иконкой очистки и разными вариантами */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Статусы с очисткой и вариантами</h3>
           <Input
@@ -429,7 +458,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Статусы с иконкой очистки и разными размерами */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Статусы с очисткой и размерами</h3>
           <Input
@@ -490,7 +518,6 @@ export default function Home() {
           />
         </div>
 
-        {/* С иконкой очистки - базовые */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>С очисткой - базовые</h3>
           <Input clearable placeholder="Очищаемый" />
@@ -502,7 +529,7 @@ export default function Home() {
           />
         </div>
 
-        {/* С иконкой очистки - medium размер */}
+      
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>С очисткой - Medium</h3>
           <Input clearable size="medium" placeholder="Очищаемый Medium" />
@@ -519,8 +546,6 @@ export default function Home() {
             placeholder="Очищаемый Underline Medium"
           />
         </div>
-
-        {/* С иконкой очистки - large размер */}
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>С очисткой - Large</h3>
           <Input clearable size="large" placeholder="Очищаемый Large" />
@@ -538,7 +563,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Заблокированные */}
+      
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Заблокированные</h3>
           <Input variant="filled" disabled placeholder="Заблокировано Filled" />
@@ -554,7 +579,7 @@ export default function Home() {
           />
         </div>
 
-        {/* Заблокированные со статусами */}
+        
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           <h3>Заблокированные со статусами</h3>
           <Input disabled status="error" placeholder="Ошибка (заблокировано)" />
@@ -569,7 +594,7 @@ export default function Home() {
             placeholder="Успех (заблокировано)"
           />
         </div>
-      </div>
+      </div> */}
       {/* <div
 				style={{
 					display: "flex",

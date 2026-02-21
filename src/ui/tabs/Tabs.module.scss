@@ -1,8 +1,96 @@
-.tabs {
+$primary-hover: #4096ff;
+$primary-active: #0958d9;
+
+.nui-wrapper {
   display: flex;
-  gap: 3px;
-  border: 1px solid gray;
-  padding: 3px;
-  border-radius: 10px;
-  max-width: max-content;
+  flex-direction: column;
+
+  .nui-tabs {
+    display: flex;
+    gap: 2px;
+
+    //size
+    &--small {
+      font-size: 12px;
+    }
+
+    &--medium {
+      font-size: 14px;
+    }
+
+    &--large {
+      font-size: 16px;
+    }
+
+    &--full-width {
+      width: 100%;
+
+      .nui-tab--full-width {
+        flex: 1;
+        text-align: center;
+      }
+    }
+
+    // // variants
+    // &--underline {
+    // }
+
+    // &--rounded {
+    // }
+
+    .nui-tab {
+      padding: 10px;
+      cursor: pointer;
+
+      &--small {
+        padding: 6px 12px;
+        font-size: 12px;
+      }
+
+      &--medium {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+
+      &--large {
+        padding: 14px 24px;
+        font-size: 16px;
+      }
+
+      &-icon {
+        display: flex;
+        align-items: center;
+        font-size: 1.2em;
+      }
+
+      &--underline {
+        border-bottom: 2px solid transparent;
+
+        &:hover {
+          color: $primary-hover;
+          border-bottom: 2px solid $primary-hover;
+        }
+
+        &.nui-tab--active {
+          color: $primary-active;
+          border-bottom-color: $primary-active;
+        }
+      }
+
+      &--rounded {
+        border: 2px solid transparent;
+        border-radius: 6px;
+
+        &:hover {
+          color: $primary-hover;
+          border: 2px solid $primary-hover;
+        }
+
+        &.nui-tab--active {
+          color: $primary-active;
+          border-color: $primary-active;
+        }
+      }
+    }
+  }
 }

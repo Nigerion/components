@@ -1,16 +1,6 @@
 "use client";
 import styles from "./Card.module.scss";
-
-interface ICard {
-  variant?: Variant;
-  size?: Size;
-  children: React.ReactNode;
-  prefixCls?: string;
-  className?: string;
-}
-
-type Variant = "" | "" | "";
-type Size = "small" | string;
+import { ICardProps } from "./types";
 
 export const Card = ({
   className,
@@ -18,7 +8,7 @@ export const Card = ({
   variant,
   prefixCls = "nui-card",
   size,
-}: ICard) => {
+}: ICardProps) => {
   const cardClass = [
     styles[prefixCls],
     variant && styles[`${prefixCls}--${variant}`],
