@@ -4,6 +4,9 @@ import {
   useState,
 } from "react";
 
+import { redirect } from "next/navigation";
+
+import { Button } from "@/ui/button/Button";
 import { Tabs } from "@/ui/tabs/Tabs";
 
 // import { Download, Heart, Search, User } from "lucide-react";
@@ -138,7 +141,6 @@ export default function Home() {
   //   { key: "fr", label: "Франция" },
   //   { key: "jp", label: "Япония" },
   // ];
-
   return (
     <div
       style={{
@@ -149,6 +151,9 @@ export default function Home() {
         margin: " 30%",
       }}
     >
+      <Button onClick={() => redirect("/main")} size="small">
+        Переход
+      </Button>
       <h1>Здесь будут появляться компоненты!</h1>
       <Card>
         <CardHeader title="Title" subheader="subheader"></CardHeader>
