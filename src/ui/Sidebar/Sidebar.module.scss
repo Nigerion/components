@@ -1,0 +1,41 @@
+.wrapper {
+  border-right: 1px solid red;
+  max-width: maxContent;
+  height: 100vh;
+  padding: 5px;
+  border-radius: 10px;
+  background: white;
+}
+
+.logo {
+  height: 100px;
+}
+
+.menuWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menuSection {
+  display: flex;
+  gap: 10px;
+  border: 1px solid red;
+  padding: 5px 15px;
+}
+
+.menuSectionActive {
+  border: 1px solid blue;
+}
+
+.menuSubSection {
+  display: flex;
+  gap: 10px;
+  border: 1px solid red;
+  padding: 5px 15px;
+  margin-left: 20px;
+}
+
+.menuSubSectionActive {
+  border: 1px solid blue;
+}

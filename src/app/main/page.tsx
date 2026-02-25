@@ -1,76 +1,57 @@
 "use client";
 
-import { useState } from "react";
+import { MouseEvent, ReactNode, useState } from "react";
+
+import { redirect } from "next/navigation";
 
 import { Puzzle, ToolCase } from "lucide-react";
 
-const menu = [
-  { title: "Главная", icon: <ToolCase /> },
+import { Sidebar } from "@/ui/Sidebar/Sidebar";
+
+export interface IMenu {
+  title: string;
+  icon: ReactNode;
+  section: MenuSection;
+  children?: ISubMenu[];
+  path?: string;
+}
+
+type MenuSection = "main" | "components";
+
+type OpenSubSidebarState = {
+  [key in MenuSection]?: boolean;
+};
+export interface ISubMenu {
+  title: string;
+  path: string;
+}
+
+const menu: IMenu[] = [
+  {
+    title: "Главная",
+    icon: <ToolCase />,
+    section: "main",
+    path: "",
+  },
   {
     title: "Компоненты",
     icon: <Puzzle />,
-    children: [{ title: "asd", href: "" }],
+    section: "components",
+    children: [
+      { title: "Button", path: "/" },
+      { title: "Input", path: "/" },
+      { title: "Table", path: "/" },
+      { title: "Card", path: "/" },
+      { title: "Select", path: "/" },
+      { title: "Tab", path: "/" },
+    ],
   },
-  // { title: "", icon: "", children: [{}] },
-  // { title: "", icon: "", children: [{}] },
 ];
+
 export default function Main() {
-  const [openSidebar, setOpenSidebar] = useState<boolean>(false);
-  const [openSubSidebar, setOpenSubSidebar] = useState<boolean>(false);
   return (
     <div style={{ display: "flex" }}>
-      <div
-        style={{
-          borderRight: "1px solid red",
-          maxWidth: "maxContent",
-          height: "100vh",
-          padding: "5px",
-          borderRadius: "10px",
-        }}
-      >
-        <div style={{ height: "100px" }}>NUI</div>
-
-        <div onClick={() => setOpenSidebar(true)}>
-          {menu.map(({ icon, title, children }, index) => {
-            return (
-              <div key={index}>
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "10px",
-                    border: "1px solid red",
-                    padding: "5px 15px",
-                  }}
-                >
-                  <span>{icon}</span>
-                  {openSidebar && <span>{title}</span>}
-                </div>
-                {openSubSidebar && openSidebar ? (
-                  <>
-                    {children?.map(({ title }, index) => (
-                      <div
-                        onClick={() => setOpenSubSidebar(true)}
-                        style={{
-                          display: "flex",
-                          gap: "10px",
-                          border: "1px solid red",
-                          padding: "5px 15px",
-                          marginLeft: "20px",
-                        }}
-                        key={index}
-                      >
-                        {title}
-                      </div>
-                    ))}
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <Sidebar></Sidebar>
       <div>
         <div></div>
         <div></div>
