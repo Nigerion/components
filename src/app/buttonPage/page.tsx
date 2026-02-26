@@ -10,6 +10,7 @@ export default function ButtonPage() {
           display: "flex",
           flexDirection: "column",
           gap: "10px",
+          padding: "20px",
         }}
       >
         <Button>Кликни меня!</Button>

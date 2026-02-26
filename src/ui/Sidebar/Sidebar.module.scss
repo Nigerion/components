@@ -1,8 +1,8 @@
 .wrapper {
-  border-right: 1px solid red;
-  max-width: maxContent;
+  border-right: 1px solid #e6e9ee;
+  width: 15rem;
   height: 100vh;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
   background: white;
 }
@@ -20,22 +20,24 @@
 .menuSection {
   display: flex;
   gap: 10px;
-  border: 1px solid red;
   padding: 5px 15px;
 }
 
 .menuSectionActive {
-  border: 1px solid blue;
+  background-color: #e6e9ee;
+  font-weight: 600;
+  border-radius: 5px;
 }
 
 .menuSubSection {
   display: flex;
   gap: 10px;
-  border: 1px solid red;
   padding: 5px 15px;
   margin-left: 20px;
 }
 
 .menuSubSectionActive {
-  border: 1px solid blue;
+  background-color: #e6e9ee;
+  font-weight: 600;
+  border-radius: 5px;
 }

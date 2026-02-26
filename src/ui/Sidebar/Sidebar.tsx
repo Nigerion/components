@@ -32,7 +32,7 @@ const menu: IMenu[] = [
     title: "Главная",
     icon: <ToolCase />,
     section: "main",
-    path: "",
+    path: "main",
   },
   {
     title: "Компоненты",
@@ -40,11 +40,11 @@ const menu: IMenu[] = [
     section: "components",
     children: [
       { title: "Button", path: "buttonPage", section: "button" },
-      { title: "Input", path: "/", section: "input" },
-      { title: "Table", path: "/", section: "table" },
-      { title: "Card", path: "/", section: "card" },
-      { title: "Select", path: "/", section: "select" },
-      { title: "Tab", path: "/", section: "tab" },
+      { title: "Input", path: "inputPage", section: "input" },
+      { title: "Table", path: "tablePage", section: "table" },
+      { title: "Card", path: "cardPage", section: "card" },
+      { title: "Select", path: "selectPage", section: "select" },
+      { title: "Tab", path: "tabsPage", section: "tab" },
     ],
   },
 ];
