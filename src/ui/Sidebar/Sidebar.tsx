@@ -1,8 +1,8 @@
 "use client";
 
-import { MouseEvent, ReactNode, useState } from "react";
+import { MouseEvent, ReactNode, useEffect, useRef, useState } from "react";
 
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 import { Puzzle, ToolCase } from "lucide-react";
 
@@ -50,14 +50,18 @@ const menu: IMenu[] = [
 ];
 
 export const Sidebar = () => {
+  const router = useRouter();
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const [openSubSidebar, setOpenSubSidebar] = useState<OpenSubSidebarState>({});
   const [activeSidebar, setActiveSidebar] = useState<string>("");
   const [activeSubSidebar, setActiveSubSidebar] = useState<string>("");
 
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
   const handleSidebar = (
     e: MouseEvent<HTMLDivElement>,
-    section: MenuSection
+    section: MenuSection,
+    path?: string
   ) => {
     e.stopPropagation();
     if (!openSidebar) {
@@ -67,20 +71,43 @@ export const Sidebar = () => {
     if (openSidebar) {
       setOpenSubSidebar((prev) => ({ ...prev, [section]: !prev[section] }));
     }
+    if (path) {
+      router.push(path);
+    }
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: Event) => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setOpenSidebar(false);
+        setOpenSubSidebar({});
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={classes.wrapper}>
+    <div className={classes.wrapper} ref={wrapperRef}>
       <div className={classes.logo}>NUI</div>
 
       <div className={classes.menuWrapper}>
-        {menu.map(({ icon, title, children, section }, index) => {
+        {menu.map(({ icon, title, children, section, path }, index) => {
           return (
             <div key={index} className={`${classes.menuWrapper}`}>
               <div
                 className={`${classes.menuSection} ${section === activeSidebar && classes.menuSectionActive}`}
                 onClick={(e: MouseEvent<HTMLDivElement>) => {
-                  handleSidebar(e, section);
+                  handleSidebar(e, section, path);
                   setActiveSidebar(section);
+                  router.push(path || "#");
                 }}
               >
                 <span>{icon}</span>
@@ -94,7 +121,7 @@ export const Sidebar = () => {
                       key={index}
                       onClick={() => {
                         setActiveSubSidebar(section);
-                        redirect(path);
+                        router.push(path);
                       }}
                     >
                       {title}
