@@ -66,13 +66,10 @@ export const Sidebar = () => {
     e.stopPropagation();
     if (!openSidebar) {
       setOpenSidebar(true);
-      // setActiveSidebar(section);
     }
     if (openSidebar) {
+      router.push(path || "#");
       setOpenSubSidebar((prev) => ({ ...prev, [section]: !prev[section] }));
-    }
-    if (path) {
-      router.push(path);
     }
   };
 
@@ -95,7 +92,10 @@ export const Sidebar = () => {
   }, []);
 
   return (
-    <div className={classes.wrapper} ref={wrapperRef}>
+    <div
+      className={`${classes.wrapper} ${openSidebar && classes.wrapperOpen}`}
+      ref={wrapperRef}
+    >
       <div className={classes.logo}>NUI</div>
 
       <div className={classes.menuWrapper}>
@@ -107,7 +107,7 @@ export const Sidebar = () => {
                 onClick={(e: MouseEvent<HTMLDivElement>) => {
                   handleSidebar(e, section, path);
                   setActiveSidebar(section);
-                  router.push(path || "#");
+                  // router.push(path || "#");
                 }}
               >
                 <span>{icon}</span>

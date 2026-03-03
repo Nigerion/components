@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import type { Metadata } from "next";
 
-import { Sidebar } from "../ui/Sidebar/Sidebar";
+import { Sidebar } from "../ui/sidebar/Sidebar";
 
 import "./globals.css";
 
@@ -42,6 +42,7 @@ export default function RootLayout({
               flexDirection: "column",
               minHeight: "0",
               overflow: "auto",
+              padding: "20px",
             }}
           >
             {children}

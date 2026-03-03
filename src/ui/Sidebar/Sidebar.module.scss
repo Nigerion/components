@@ -1,15 +1,28 @@
 .wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
   border-right: 1px solid #e6e9ee;
   width: 100%;
-  max-width: max-content;
+  max-width: 66px;
   height: 100vh;
   padding: 5px;
   border-radius: 10px;
   background: white;
 }
 
+.wrapperOpen {
+  max-width: 200px;
+}
+
 .logo {
-  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1670dc;
+  color: white;
+  border-radius: 10px;
+  height: 50px;
 }
 
 .menuWrapper {
