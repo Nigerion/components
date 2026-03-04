@@ -107,7 +107,6 @@ export const Sidebar = () => {
                 onClick={(e: MouseEvent<HTMLDivElement>) => {
                   handleSidebar(e, section, path);
                   setActiveSidebar(section);
-                  // router.push(path || "#");
                 }}
               >
                 <span>{icon}</span>
